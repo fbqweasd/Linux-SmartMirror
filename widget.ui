@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>500</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,13 +18,14 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>500</height>
+     <width>1920</width>
+     <height>1080</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>40</pointsize>
+     <family>D2Coding</family>
+     <pointsize>80</pointsize>
     </font>
    </property>
    <property name="text">

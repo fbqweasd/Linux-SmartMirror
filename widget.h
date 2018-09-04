@@ -13,6 +13,7 @@ class Widget : public QWidget
 
 public:
     explicit Widget(QWidget *parent = nullptr);
+    void ShowTime();
     ~Widget();
 
 private:
