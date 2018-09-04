@@ -39,7 +39,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget) //생성�
     P_ui = ui; //ui주소를 전역으로 지정
 
 
-
+    ui->TimeLabel->setStyleSheet("background:rgb(0,0,0);color : rgb(255,255,255)"); //배경, 글자색 지정
 
     Thread *t = new Thread;//쓰래드 생성
     t->start(); //쓰래드 시작 분기
