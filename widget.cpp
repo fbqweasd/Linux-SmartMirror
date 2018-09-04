@@ -4,7 +4,7 @@
 #include <QString>
 #include <QThread>
 
-Ui::Widget *P_ui;
+Ui::Widget *P_ui; //UI widget 주소를 저장하는 전역변수
 
 void delay(clock_t n)
 {
@@ -12,7 +12,7 @@ void delay(clock_t n)
   while(clock() - start < n);
 }
 
-const QString currentDateTime() {
+const QString currentDateTime() {  //시간 불러오는 함수
     time_t     now = time(0); //현재 시간을 time_t 타입으로 저장
     struct tm  tstruct;
     char       buf[80];
@@ -23,7 +23,7 @@ const QString currentDateTime() {
 }
 
 
-class Thread : public QThread {
+class Thread : public QThread { //쓰래드 클래스
 protected:
  void run() {
      while(1){
@@ -33,23 +33,26 @@ protected:
  }
 };
 
-Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
+Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget) //생성자
 {
     ui->setupUi(this);
-    P_ui = ui;
-    Thread *t = new Thread;
+    P_ui = ui; //ui주소를 전역으로 지정
 
-    t->start();
+
+
+
+    Thread *t = new Thread;//쓰래드 생성
+    t->start(); //쓰래드 시작 분기
 }
 
 
 
-void Widget::ShowTime(){
+void Widget::ShowTime(){ //안쓰는함수 - 현재시간이랑 동기화
      ui->TimeLabel->setText(currentDateTime());
 }
 
 
-Widget::~Widget()
+Widget::~Widget() //소멸자
 {
     delete ui;
 }
